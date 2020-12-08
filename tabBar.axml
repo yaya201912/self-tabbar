@@ -1,0 +1,15 @@
+<scroll-view scroll-y="{{true}}" class="{{isLongIOS?'tab-component-long-height':'tab-component-height'}}">
+  <home a:if="{{tabIndex===0}}" onGoComponont="goComponont"/>
+  <service a:if="{{tabIndex===1}}"/>
+  <open a:if="{{tabIndex===2}}"/>
+  <community a:if="{{tabIndex===3}}"/>
+  <my a:if="{{tabIndex===4}}"/>
+</scroll-view>
+<view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}}; border-top-color:{{tabbar.borderStyle}};bottom:0;padding-bottom:{{tabbar.paddingBottom}}">
+  <view class="tabbar_nav" openType="redirect" style="width:{{1/tabbar.items.length*100}}%; color:{{index===tabIndex?tabbar.selectedColor:tabbar.textColor}}" a:for="{{tabbar.items}}" a:key="index">
+    <view class="tab-item-box" data-tab-index="{{index}}" onTap="changeTab">
+      <image class="{{index===2?'open_tabbar_icon':'tabbar_icon'}}" src="{{index===tabIndex?item.activeIcon:item.icon}}" />
+      <view class="{{index===2?'open_tabbar_text':'tabbar_text'}}">{{item.name}}</view>
+    </view>
+  </view>
+</view>

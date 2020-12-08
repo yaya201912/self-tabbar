@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "home": "/components/home/home",
+    "service": "/components/service/service",
+    "open": "/components/open/open",
+    "community": "/components/community/community",
+    "my": "/components/my/my"
+  }
+}
